@@ -1,8 +1,8 @@
 pipeline {
    agent { label 'Test' }
     tools { 
-        maven 'Maven 3.6.3' 
-        jdk 'jdk8' 
+        maven 'apache-maven-3.6.3' 
+        jdk 'java' 
     }
     stages {
         stage ('Initialize') {
