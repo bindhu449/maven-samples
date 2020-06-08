@@ -1,7 +1,7 @@
 pipeline {
    agent { label 'Test' }
     tools { 
-        maven 'apache-maven-3.6.3' 
+        maven 'MAVEN' 
         jdk 'java' 
     }
     stages {
