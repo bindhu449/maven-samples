@@ -1,26 +1,23 @@
-pipeline{
-   agent { label 'Test'}
- 
-   
-   stages {
-    stage ('build')
-      {
-      steps {
-      echo "building a maven project"
-       
-      }
+pipeline {
+   agent { label 'Test' }
+    tools { 
+        maven 'Maven 3.6.3' 
+        jdk 'jdk8' 
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
 
-}  
- stage ('test')
-      {
-      steps {
-      echo "testing"
-       
-      }
-
-}  
-
-
-}
-
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
+        }
+    }
 }
